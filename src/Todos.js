@@ -2,6 +2,7 @@ import React from 'react'
 import './Todos.css'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import knockSound from './knockSound.mp3'
 import { useState } from 'react';
 const Todos = ({ newTodo, todo, id, setTodo, input }) => {
 
@@ -15,7 +16,8 @@ const Todos = ({ newTodo, todo, id, setTodo, input }) => {
 
 
     const handleDelete = (idR) => {
-
+        const audio = new Audio(knockSound);
+        audio.play()
         setTodo(todo.filter((x) => x.id != idR))
     }
 
@@ -32,7 +34,8 @@ const Todos = ({ newTodo, todo, id, setTodo, input }) => {
             } : x))
         }
 
-
+        const audio = new Audio(knockSound);
+        audio.play()
 
     }
 

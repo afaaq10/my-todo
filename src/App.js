@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, setTimeout } from 'react';
 import './App.css';
 import Todos from './Todos';
 import Button from '@mui/material/Button';
+import knockSound from './knockSound.mp3'
+
 
 function App() {
 
@@ -23,13 +25,21 @@ function App() {
       setTodo([...todo, { id: Date.now(), text: input }])
       setInput("")
     }
-
+    const audio = new Audio(knockSound);
+    audio.play()
 
   }
 
   const removeAll = () => {
+    const audio = new Audio(knockSound);
+    audio.play()
     setTodo([])
+
   }
+
+
+
+
 
   return (
     <div className="App">
